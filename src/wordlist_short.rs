@@ -1,4 +1,4 @@
-pub const SHORT_WORD_LIST: [&str; 1296] = [
+pub const SHORT_WORDLIST: [&str; 1296] = [
     "acid",
     "acorn",
     "acre",

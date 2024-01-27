@@ -20,7 +20,7 @@ pub enum Commands {
         separator: String,
 
         /// specify which word list to use
-        #[arg(long, value_enum, default_value_t = WordList::Long)]
+        #[arg(short, long, value_enum, default_value_t = WordList::Long)]
         wordlist: WordList,
     },
 }
