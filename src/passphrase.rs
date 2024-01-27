@@ -1,6 +1,6 @@
 use crate::cli::WordList;
-use crate::long_wordlist::LONG_WORD_LIST;
-use crate::short_wordlist::SHORT_WORD_LIST;
+use crate::wordlist_long::LONG_WORD_LIST;
+use crate::wordlist_short::SHORT_WORD_LIST;
 use rand::prelude::*;
 
 pub fn generate_passphrase(wordlist: WordList, length: u8, separator: String) -> String {

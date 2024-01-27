@@ -3,9 +3,9 @@ use cli::{Cli, Commands};
 use passphrase::generate_passphrase;
 
 mod cli;
-mod long_wordlist;
+mod wordlist_long;
 mod passphrase;
-mod short_wordlist;
+mod wordlist_short;
 
 fn main() {
     let cli = Cli::parse();
