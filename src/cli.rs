@@ -28,8 +28,8 @@ pub enum Commands {
     Entropy {
         /// the password to calculate entropy from
         #[arg()]
-        password: String
-    }
+        password: String,
+    },
 }
 
 #[derive(Clone, ValueEnum)]
