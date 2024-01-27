@@ -27,8 +27,8 @@ pub enum Commands {
 
 #[derive(Clone, ValueEnum)]
 pub enum WordList {
-    /// the long word list
+    /// use the long word list
     Long,
-    /// the short word list
+    /// use the short word list
     Short,
 }
