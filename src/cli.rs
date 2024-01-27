@@ -23,6 +23,13 @@ pub enum Commands {
         #[arg(short, long, value_enum, default_value_t = WordList::Long)]
         wordlist: WordList,
     },
+
+    /// calculate a password's entropy/strength
+    Entropy {
+        /// the password to calculate entropy from
+        #[arg()]
+        password: String
+    }
 }
 
 #[derive(Clone, ValueEnum)]
