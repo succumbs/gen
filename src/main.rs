@@ -1,3 +1,6 @@
+mod long_wordlist;
+mod short_wordlist;
+
 use clap::{Parser, Subcommand, ValueEnum};
 
 
@@ -15,7 +18,7 @@ enum Commands {
     Passphrase {
         /// length of the passphrase (in words)
         #[arg(short, long, default_value_t = 6)]
-        length: u32,
+        length: u8,
        
         /// separator between words
         #[arg(short, long, default_value = "-")]
@@ -30,9 +33,9 @@ enum Commands {
 
 #[derive(Clone, ValueEnum)]
 enum WordList {
-    /// use the long word list
+    /// the long word list
     Long,
-    /// use the short word list
+    /// the short word list
     Short,
 }
 
