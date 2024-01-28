@@ -1,4 +1,4 @@
-pub const LONG_WORDLIST: [&str; 7776] = [
+pub const WORDLIST: [&str; 7776] = [
     "abacus",
     "abdomen",
     "abdominal",
