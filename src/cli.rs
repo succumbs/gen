@@ -17,5 +17,8 @@ pub enum Commands {
         /// separator between words
         #[arg(short, long, default_value = "-")]
         separator: char,
+        /// capitalize each word in the passphrase
+        #[arg(short, long, default_value_t = false)]
+        capitalize: bool,
     },
 }

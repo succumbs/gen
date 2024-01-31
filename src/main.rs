@@ -10,9 +10,12 @@ fn main() {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Passphrase { length, separator } => {
-            let passphrase = generate_passphrase(length, separator);
-            println!("{}", passphrase);
+        Commands::Passphrase {
+            length,
+            separator,
+            capitalize,
+        } => {
+            println!("{} \n", generate_passphrase(length, separator, capitalize));
         }
     }
 }
