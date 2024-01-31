@@ -5,7 +5,7 @@ pub fn generate_passphrase(length: u8, separator: char, capitalize: bool) -> Str
     let mut rng = rand::thread_rng();
 
     WORDLIST
-        .choose_multiple(&mut rng, length as usize)
+        .choose_multiple(&mut rng, length.into())
         .map(|word| {
             if capitalize {
                 capitalize_str(word)
