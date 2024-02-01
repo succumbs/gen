@@ -6,12 +6,9 @@ pub fn generate_passphrase(length: u8, separator: char, capitalize: bool) -> Str
 
     WORDLIST
         .choose_multiple(&mut rng, length.into())
-        .map(|word| {
-            if capitalize {
-                capitalize_str(word)
-            } else {
-                word.to_string()
-            }
+        .map(|word| match capitalize {
+            true => capitalize_str(word),
+            false => word.to_string(),
         })
         .collect::<Vec<String>>()
         .join(&separator.to_string())
