@@ -2,7 +2,7 @@ use crate::wordlist::WORDLIST;
 use rand::prelude::*;
 
 pub fn generate_passphrase(length: u8, separator: char, capitalize: bool) -> String {
-    let mut rng = rand::thread_rng();
+    let mut rng = thread_rng();
 
     WORDLIST
         .choose_multiple(&mut rng, length.into())
@@ -16,10 +16,5 @@ pub fn generate_passphrase(length: u8, separator: char, capitalize: bool) -> Str
 
 fn capitalize_str(s: &str) -> String {
     let mut chars = s.chars();
-    chars
-        .next()
-        .expect("string should not be empty")
-        .to_uppercase()
-        .collect::<String>()
-        + chars.as_str()
+    chars.next().unwrap().to_uppercase().collect::<String>() + chars.as_str()
 }

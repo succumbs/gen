@@ -14,11 +14,32 @@ pub enum Commands {
         /// length of the passphrase (in words)
         #[arg(short, long, default_value_t = 6)]
         length: u8,
+
         /// separator between words
-        #[arg(short, long, default_value = "-")]
+        #[arg(short, long, default_value_t = '-')]
         separator: char,
+
         /// capitalize each word in the passphrase
-        #[arg(short, long, default_value_t = false)]
+        #[arg(short, long)]
         capitalize: bool,
+    },
+
+    /// generate a password
+    Password {
+        /// length of the password
+        #[arg(short, long, default_value_t = 14)]
+        length: u8,
+
+        /// include alphabetical characters (a-z, A-Z)
+        #[arg(short, long)]
+        alphabetical: bool,
+
+        /// include numbers (0-9)
+        #[arg(short, long)]
+        numeric: bool,
+
+        /// include special characters (!@#$%^&*)
+        #[arg(short, long)]
+        special: bool,
     },
 }
