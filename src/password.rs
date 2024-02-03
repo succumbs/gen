@@ -17,5 +17,10 @@ pub fn generate_password(length: u8, alphabetical: bool, numeric: bool, special:
         charset.extend("!@#$%^&*".chars());
     }
 
-    charset.choose_multiple(&mut rng, length.into()).collect()
+    (0..length)
+        .map(|_| {
+            let index = rng.gen_range(0..charset.len());
+            charset[index]
+        })
+        .collect()
 }
