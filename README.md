@@ -38,7 +38,7 @@ Options:
 ```
 $ gen password --help
 generate a password
-will default to using all character types (alphabetic, numeric, special) if no options are provided
+will default to using all character types if no options are provided
 
 Usage: gen password [OPTIONS]
 
