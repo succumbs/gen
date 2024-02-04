@@ -26,7 +26,7 @@ pub enum Commands {
 
     /// generate a password
     /// note: if no charset flags are provided, all charsets will be included
-    #[command(aliases = ["pw"], verbatim_doc_comment)]
+    #[command(verbatim_doc_comment)]
     Password {
         /// length of the password
         #[arg(short, long, default_value_t = 14)]
