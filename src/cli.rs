@@ -25,7 +25,7 @@ pub enum Commands {
     },
 
     /// generate a password
-    /// will default to using all character types (alphabetic, numeric, special) if no options are provided
+    /// will default to using all character types if no options are provided
     #[command(verbatim_doc_comment)]
     Password {
         /// length of the password
