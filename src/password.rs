@@ -1,26 +1,37 @@
 use rand::prelude::*;
 
-pub fn generate_password(length: u8, alphabetical: bool, numeric: bool, special: bool) -> String {
+const ALPHABET: &str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const NUMERIC: &str = "0123456789";
+const SPECIAL: &str = "!@#$%^&*()-_=+[]{}|;:'\",.?<>\\/";
+const AMBIGUOUS: &str = "0Ol1I|,.:;`'\"";
+
+pub fn generate_password(
+    length: u8,
+    alphabetical: bool,
+    numerical: bool,
+    special: bool,
+    exclude_ambiguous: bool,
+) -> String {
     let mut rng = thread_rng();
     let mut charset = Vec::new();
 
     if alphabetical {
-        charset.extend('a'..='z');
-        charset.extend('A'..='Z');
+        charset.extend(ALPHABET.chars());
     }
 
-    if numeric {
-        charset.extend('0'..='9');
+    if numerical {
+        charset.extend(NUMERIC.chars());
     }
 
     if special {
-        charset.extend("!@#$%^&*".chars());
+        charset.extend(SPECIAL.chars());
+    }
+
+    if exclude_ambiguous {
+        charset.retain(|c| !AMBIGUOUS.contains(*c));
     }
 
     (0..length)
-        .map(|_| {
-            let index = rng.gen_range(0..charset.len());
-            charset[index]
-        })
+        .map(|_| charset.choose(&mut rng).unwrap())
         .collect()
 }

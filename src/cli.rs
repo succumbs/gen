@@ -25,23 +25,27 @@ pub enum Commands {
     },
 
     /// generate a password
-    /// note: if no charset flags are provided, all charsets will be included
+    /// will default to using all character types (alphabetic, numeric, special) if no options are provided
     #[command(verbatim_doc_comment)]
     Password {
         /// length of the password
         #[arg(short, long, default_value_t = 14)]
         length: u8,
 
-        /// include alphabetical characters (a-z, A-Z)
+        /// include alphabetical characters (upper & lower case)
         #[arg(short, long)]
-        alpha: bool,
+        alphabetical: bool,
 
-        /// include numbers (0-9)
+        /// include numbers
         #[arg(short, long)]
-        numeric: bool,
+        numerical: bool,
 
-        /// include special characters (!@#$%^&*)
+        /// include special characters
         #[arg(short, long)]
         special: bool,
+
+        /// exclude ambiguous characters
+        #[arg(short, long)]
+        exclude_ambiguous: bool,
     },
 }
