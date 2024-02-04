@@ -9,7 +9,7 @@ a simple &amp; secure cli password/passphrase generator
 $ gen --help
 a simple & secure cli password/passphrase generator
 
-Usage: gen.exe <COMMAND>
+Usage: gen <COMMAND>
 
 Commands:
   passphrase  generate a passphrase
@@ -26,7 +26,7 @@ Options:
 $ gen passphrase --help
 generate a passphrase
 
-Usage: gen.exe passphrase [OPTIONS]
+Usage: gen passphrase [OPTIONS]
 
 Options:
   -l, --length <LENGTH>        length of the passphrase (in words) [default: 6]
@@ -36,16 +36,17 @@ Options:
 ```
 
 ```
-$ gen password --help  
+$ gen password --help
 generate a password
-note: if no charset flags are provided, all charsets will be included
+will default to using all character types (alphabetic, numeric, special) if no options are provided
 
-Usage: gen.exe password [OPTIONS]
+Usage: gen password [OPTIONS]
 
 Options:
-  -l, --length <LENGTH>  length of the password [default: 14]
-  -a, --alpha            include alphabetical characters (a-z, A-Z)
-  -n, --numeric          include numbers (0-9)
-  -s, --special          include special characters (!@#$%^&*)
-  -h, --help             Print help
+  -l, --length <LENGTH>    length of the password [default: 14]
+  -a, --alphabetical       include alphabetical characters (upper & lower case)
+  -n, --numerical          include numbers
+  -s, --special            include special characters
+  -e, --exclude-ambiguous  exclude ambiguous characters
+  -h, --help               Print help
 ```
