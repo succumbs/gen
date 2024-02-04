@@ -32,7 +32,7 @@ pub enum Commands {
 
         /// include alphabetical characters (a-z, A-Z)
         #[arg(short, long)]
-        alphabetical: bool,
+        alpha: bool,
 
         /// include numbers (0-9)
         #[arg(short, long)]

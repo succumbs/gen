@@ -22,19 +22,19 @@ fn main() {
 
         Commands::Password {
             length,
-            mut alphabetical,
+            mut alpha,
             mut numeric,
             mut special,
         } => {
-            if !alphabetical && !numeric && !special {
-                alphabetical = true;
+            if !alpha && !numeric && !special {
+                alpha = true;
                 numeric = true;
                 special = true;
             }
 
             println!(
                 "{}",
-                generate_password(length, alphabetical, numeric, special)
+                generate_password(length, alpha, numeric, special)
             );
         }
     }
