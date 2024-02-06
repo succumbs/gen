@@ -6,7 +6,7 @@ const SPECIAL: &str = "!@#$%^&*()-_=+[]{}|;:'\",.?<>\\/";
 const AMBIGUOUS: &str = "0Ol1I|,.:;`'\"";
 
 pub fn generate_password(
-    length: u8,
+    length: u32,
     alphabetical: bool,
     numerical: bool,
     special: bool,
@@ -28,7 +28,7 @@ pub fn generate_password(
     }
 
     if exclude_ambiguous {
-        charset.retain(|c| !AMBIGUOUS.contains(*c));
+        charset.retain(|&c| !AMBIGUOUS.contains(c));
     }
 
     (0..length)

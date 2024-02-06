@@ -13,7 +13,7 @@ pub enum Commands {
     Passphrase {
         /// length of the passphrase (in words)
         #[arg(short, long, default_value_t = 6)]
-        length: u8,
+        length: u32,
 
         /// separator between words
         #[arg(short, long, default_value_t = '-')]
@@ -30,7 +30,7 @@ pub enum Commands {
     Password {
         /// length of the password
         #[arg(short, long, default_value_t = 14)]
-        length: u8,
+        length: u32,
 
         /// include alphabetical characters (upper & lower case)
         #[arg(short, long)]
