@@ -10,6 +10,7 @@ pub struct Cli {
 #[derive(Subcommand)]
 pub enum Commands {
     /// generate a passphrase
+    #[command(visible_aliases = ["pp"])]
     Passphrase {
         /// length of the passphrase (in words)
         #[arg(short, long, default_value_t = 6)]
@@ -24,25 +25,26 @@ pub enum Commands {
         capitalize: bool,
     },
 
+    
     /// generate a password
-    /// will default to using all character types if no options are provided
-    #[command(verbatim_doc_comment)]
+    /// will include all charsets unless explicitly specified by flags
+    #[command(visible_aliases = ["pw", "pwd"], verbatim_doc_comment)]
     Password {
         /// length of the password
         #[arg(short, long, default_value_t = 14)]
         length: u32,
 
-        /// include alphabetical characters (upper & lower case)
+        /// include letters
         #[arg(short, long)]
-        alphabetical: bool,
+        letters: bool,
 
-        /// include numbers
+        /// include digits
         #[arg(short, long)]
-        numerical: bool,
+        digits: bool,
 
         /// include special characters
         #[arg(short, long)]
-        special: bool,
+        specials: bool,
 
         /// exclude ambiguous characters
         #[arg(short, long)]

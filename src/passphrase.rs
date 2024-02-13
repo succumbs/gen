@@ -18,5 +18,5 @@ pub fn generate_passphrase(length: u32, separator: char, capitalize: bool) -> St
 
 fn capitalize_str(s: &str) -> String {
     let mut chars = s.chars();
-    chars.next().unwrap().to_uppercase().collect::<String>() + chars.as_str()
+    chars.next().unwrap().to_uppercase().chain(chars).collect()
 }
