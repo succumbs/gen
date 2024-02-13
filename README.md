@@ -12,9 +12,9 @@ a simple & secure cli password/passphrase generator
 Usage: gen <COMMAND>
 
 Commands:
-  passphrase  generate a passphrase
+  passphrase  generate a passphrase [aliases: pp]
   password    generate a password
-                  note: if no charset flags are provided, all charsets will be included
+                  will include all charsets unless explicitly specified by flags [aliases: pw, pwd]
   help        Print this message or the help of the given subcommand(s)
 
 Options:
@@ -38,15 +38,15 @@ Options:
 ```
 $ gen password --help
 generate a password
-will default to using all character types if no options are provided
+will include all charsets unless explicitly specified by flags
 
 Usage: gen password [OPTIONS]
 
 Options:
   -l, --length <LENGTH>    length of the password [default: 14]
-  -a, --alphabetical       include alphabetical characters (upper & lower case)
-  -n, --numerical          include numbers
-  -s, --special            include special characters
+  -l, --letters            include letters
+  -d, --digits             include digits
+  -s, --specials           include special characters
   -e, --exclude-ambiguous  exclude ambiguous characters
-  -h, --help               Print help
+  -h, --help
 ```
