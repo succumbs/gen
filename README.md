@@ -40,13 +40,13 @@ $ gen password --help
 generate a password
 will include all charsets unless explicitly specified by flags
 
-Usage: gen password [OPTIONS]
+Usage: gen.exe password [OPTIONS]
 
 Options:
   -l, --length <LENGTH>    length of the password [default: 14]
-  -l, --letters            include letters
-  -d, --digits             include digits
-  -s, --specials           include special characters
+  -a, --alphabetical       include letters
+  -n, --numerical          include numbers
+  -s, --special            include special characters
   -e, --exclude-ambiguous  exclude ambiguous characters
-  -h, --help
+  -h, --help               Print help
 ```
