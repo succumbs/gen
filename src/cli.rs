@@ -36,15 +36,15 @@ pub enum Commands {
 
         /// include letters
         #[arg(short, long)]
-        letters: bool,
+        alphabetical: bool,
 
-        /// include digits
+        /// include numbers
         #[arg(short, long)]
-        digits: bool,
+        numerical: bool,
 
         /// include special characters
         #[arg(short, long)]
-        specials: bool,
+        special: bool,
 
         /// exclude ambiguous characters
         #[arg(short, long)]

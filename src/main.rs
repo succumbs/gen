@@ -22,23 +22,23 @@ fn main() {
 
         Commands::Password {
             length,
-            mut letters,
-            mut digits,
-            mut specials,
+            mut alphabetical,
+            mut numerical,
+            mut special,
             exclude_ambiguous,
         } => {
-            match (letters, digits, specials) {
+            match (alphabetical, numerical, special) {
                 (false, false, false) => {
-                    letters = true;
-                    digits = true;
-                    specials = true;
+                    alphabetical = true;
+                    numerical = true;
+                    special = true;
                 }
                 _ => {}
             }
 
             println!(
                 "{}",
-                generate_password(length, letters, digits, specials, exclude_ambiguous)
+                generate_password(length, alphabetical, numerical, special, exclude_ambiguous)
             );
         }
     }
