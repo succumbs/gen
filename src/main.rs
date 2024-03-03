@@ -27,13 +27,10 @@ fn main() {
             mut special,
             exclude_ambiguous,
         } => {
-            match (alphabetical, numerical, special) {
-                (false, false, false) => {
-                    alphabetical = true;
-                    numerical = true;
-                    special = true;
-                }
-                _ => {}
+            if !(alphabetical || numerical || special) {
+                alphabetical = true;
+                numerical = true;
+                special = true;
             }
 
             println!(
