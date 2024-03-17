@@ -40,7 +40,7 @@ $ gen password --help
 generate a password
 will include all charsets unless explicitly specified by flags
 
-Usage: gen.exe password [OPTIONS]
+Usage: gen password [OPTIONS]
 
 Options:
   -l, --length <LENGTH>    length of the password [default: 14]
